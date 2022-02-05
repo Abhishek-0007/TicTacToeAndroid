@@ -38,6 +38,7 @@ public class GameActivity extends AppCompatActivity {
         otp = intent.getStringExtra("otp");
         init();
         onClick();
+        getFromDatabase();
         showOTP.setText(" OTP: "+ otp);
         gameBow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +69,26 @@ public class GameActivity extends AppCompatActivity {
         gameBow = findViewById(R.id.gameBox);
     }
 
+    public void getFromDatabase()
+    {
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference().child(otp).child("game");
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (int i=0; i< snapshot.getChildrenCount(); i++)
+                {
+                    Log.d("@@changes: ", snapshot.getValue().toString());
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
     public void check() {
         // int[][] winningPos = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {1, 4, 7}, {2, 5, 8}, {3, 6, 9}, {1, 5, 9}, {3, 5, 7}};
 
@@ -76,21 +97,6 @@ public class GameActivity extends AppCompatActivity {
             check3++;
             return;
         }
-
-//        FirebaseDatabase database = FirebaseDatabase.getInstance();
-//        DatabaseReference myRef = database.getReference().child(otp);
-//        myRef.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                String value = snapshot.getValue(String.class);
-//                map.put(1,value);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
 
         for (int a = 0; a < 8; a++) {
             String line = "";
@@ -210,7 +216,8 @@ public class GameActivity extends AppCompatActivity {
                     X = true;
                 }
                 text1.setEnabled(false);
-                databaseReference = FirebaseDatabase.getInstance().getReference().child(otp).child("text1");
+                map.put(1, text1.getText().toString());
+                databaseReference = FirebaseDatabase.getInstance().getReference().child(otp).child("game").child("text1");
                 databaseReference.setValue( text1.getText().toString());
                 System.out.println(map);
                 check();
@@ -231,7 +238,8 @@ public class GameActivity extends AppCompatActivity {
                     X = true;
                 }
                 text2.setEnabled(false);
-                databaseReference = FirebaseDatabase.getInstance().getReference().child(otp).child("text2");
+                map.put(2, text2.getText().toString());
+                databaseReference = FirebaseDatabase.getInstance().getReference().child(otp).child("game").child("text2");
                 databaseReference.setValue(text2.getText().toString());
                 System.out.println(map);
                 check();
@@ -252,7 +260,8 @@ public class GameActivity extends AppCompatActivity {
                     X = true;
                 }
                 text3.setEnabled(false);
-                databaseReference = FirebaseDatabase.getInstance().getReference().child(otp).child("text3");
+                map.put(3, text3.getText().toString());
+                databaseReference = FirebaseDatabase.getInstance().getReference().child(otp).child("game").child("text3");
                 databaseReference.setValue( text3.getText().toString());
                 check();
                 System.out.println(map);
@@ -273,7 +282,8 @@ public class GameActivity extends AppCompatActivity {
                     X = true;
                 }
                 text4.setEnabled(false);
-                databaseReference = FirebaseDatabase.getInstance().getReference().child(otp).child("text4");
+                map.put(4, text4.getText().toString());
+                databaseReference = FirebaseDatabase.getInstance().getReference().child(otp).child("game").child("text4");
                 databaseReference.setValue(text4.getText().toString());
                 check();
                 System.out.println(map);
@@ -294,7 +304,8 @@ public class GameActivity extends AppCompatActivity {
                     X = true;
                 }
                 text5.setEnabled(false);
-                databaseReference = FirebaseDatabase.getInstance().getReference().child(otp).child("text5");
+                map.put(5, text5.getText().toString());
+                databaseReference = FirebaseDatabase.getInstance().getReference().child(otp).child("game").child("text5");
                 databaseReference.setValue(text5.getText().toString());
                 check();
                 System.out.println(map);
@@ -315,7 +326,8 @@ public class GameActivity extends AppCompatActivity {
                     X = true;
                 }
                 text6.setEnabled(false);
-                databaseReference = FirebaseDatabase.getInstance().getReference().child(otp).child("text6");
+                map.put(6, text6.getText().toString());
+                databaseReference = FirebaseDatabase.getInstance().getReference().child(otp).child("game").child("text6");
                 databaseReference.setValue(text6.getText().toString());
                 check();
                 System.out.println(map);
@@ -337,7 +349,8 @@ public class GameActivity extends AppCompatActivity {
                     X = true;
                 }
                 text7.setEnabled(false);
-                databaseReference = FirebaseDatabase.getInstance().getReference().child(otp).child("text7");
+                map.put(7, text7.getText().toString());
+                databaseReference = FirebaseDatabase.getInstance().getReference().child(otp).child("game").child("text7");
                 databaseReference.setValue(text7.getText().toString());
                 check();
                 System.out.println(map);
@@ -358,7 +371,8 @@ public class GameActivity extends AppCompatActivity {
                     X = true;
                 }
                 text8.setEnabled(false);
-                databaseReference = FirebaseDatabase.getInstance().getReference().child(otp).child("text8");
+                map.put(8, text8.getText().toString());
+                databaseReference = FirebaseDatabase.getInstance().getReference().child(otp).child("game").child("text8");
                 databaseReference.setValue(text8.getText().toString());
                 check();
                 System.out.println(map);
@@ -379,7 +393,8 @@ public class GameActivity extends AppCompatActivity {
                     X = true;
                 }
                 text9.setEnabled(false);
-                databaseReference = FirebaseDatabase.getInstance().getReference().child(otp).child("text9");
+                map.put(9, text9.getText().toString());
+                databaseReference = FirebaseDatabase.getInstance().getReference().child(otp).child("game").child("text9");
                 databaseReference.setValue(text9.getText().toString());
                 check();
                 System.out.println(map);

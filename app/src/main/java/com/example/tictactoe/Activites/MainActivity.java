@@ -71,8 +71,12 @@ public class MainActivity extends AppCompatActivity {
 
                         Intent intent = new Intent(MainActivity.this, GameActivity.class);
                         intent.putExtra("otp",enterOTP.getText().toString());
-                        myRef.child("OpponentStatus").setValue(true);
-                        startActivity(intent);
+                        if(snapshot.hasChild("portalStatus"))
+                        {
+                            myRef.child("OpponentStatus").setValue(true);
+                            startActivity(intent);
+                        }
+                        else Toast.makeText(MainActivity.this, "OTP might be incorrect! Check again!", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
@@ -117,6 +121,16 @@ public class MainActivity extends AppCompatActivity {
         portal.child("portalStatus").setValue(portalStatus);
         portal.child("OwnerName").setValue(ownerUsername);
         portal.child("OpponentStatus").setValue(opponentStatus);
+//        portal.child("1-1").setValue("");
+//        portal.child("1-2").setValue("");
+//        portal.child("1-3").setValue("");
+//        portal.child("2-1").setValue("");
+//        portal.child("2-2").setValue("");
+//        portal.child("2-3").setValue("");
+//        portal.child("3-1").setValue("");
+//        portal.child("3-2").setValue("");
+//        portal.child("3-3").setValue("");
+
 
     }
 
