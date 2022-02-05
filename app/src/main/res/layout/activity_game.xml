@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activites.GameActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:id="@+id/otp"
+        android:layout_height="wrap_content"
+        android:text="Your Char : "
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:id="@+id/chance"
+        android:padding="20dp"
+        android:layout_height="wrap_content"
+        android:text="Your chance "
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gameBox"
+        android:padding="3dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:weightSum="3"
+            android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/box_corner"
+                    android:gravity="center"
+                    android:id="@+id/first1"
+                    android:text=""
+                    android:layout_height="120dp"
+                    android:textColor="@color/black"
+                    android:textSize="60dp"
+                    android:textStyle="bold" />
+
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:id="@+id/second1"
+                android:background="@drawable/box_corner"
+                android:layout_height="120dp"
+                android:textColor="@color/black"
+                android:textSize="60dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:id="@+id/thrird1"
+                android:background="@drawable/box_corner"
+                android:layout_height="120dp"
+                android:textColor="@color/black"
+                android:textSize="60dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:weightSum="3"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:id="@+id/first2"
+                android:background="@drawable/box_corner"
+                android:layout_height="120dp"
+                android:textColor="@color/black"
+                android:textSize="60dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:id="@+id/second2"
+                android:background="@drawable/box_corner"
+                android:layout_height="120dp"
+                android:textColor="@color/black"
+                android:textSize="60dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:id="@+id/thrird2"
+                android:background="@drawable/box_corner"
+                android:layout_height="120dp"
+                android:textColor="@color/black"
+                android:textSize="60dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:weightSum="3"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:id="@+id/first3"
+                android:background="@drawable/box_corner"
+                android:layout_height="120dp"
+                android:textColor="@color/black"
+                android:textSize="60dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:id="@+id/second3"
+                android:background="@drawable/box_corner"
+                android:layout_height="120dp"
+                android:textColor="@color/black"
+                android:textSize="60dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:id="@+id/thrird3"
+                android:background="@drawable/box_corner"
+                android:layout_height="120dp"
+                android:textColor="@color/black"
+                android:textSize="60dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
