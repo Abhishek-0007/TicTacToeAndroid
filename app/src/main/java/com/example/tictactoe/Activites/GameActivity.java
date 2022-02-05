@@ -38,7 +38,7 @@ public class GameActivity extends AppCompatActivity {
         otp = intent.getStringExtra("otp");
         init();
         onClick();
-        showOTP.setText("OTP: "+ otp);
+        showOTP.setText(" OTP: "+ otp);
         gameBow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
